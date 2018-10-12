@@ -1,0 +1,21 @@
+#!/bin/csh -vx
+
+rm datos/*
+rmdir datos
+mkdir datos
+
+
+echo "Datos Sin Poda"
+@ i = 2
+while ( $i < 21)
+echo "$i `./sinpoda $i`" >> datos/salidaSinPoda.dat
+@ i += 1
+end
+
+echo "Datos Poda"
+@ i = 2
+while ( $i < 21)
+echo "$i `./poda $i`" >> datos/salidaPoda.dat
+@ i += 1
+end
+
