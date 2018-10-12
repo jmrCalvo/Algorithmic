@@ -1,0 +1,62 @@
+#!/bin/csh -vx
+
+rm datos/*
+rmdir datos
+mkdir datos
+
+
+echo "Datos Burbuja"
+@ i = 0
+while ( $i < 50000)
+echo "$i `./burbuja $i`" >> datos/salidaBurbuja.dat
+@ i += 1000
+end
+
+echo "Datos Inserccion"
+@ i = 0
+while ( $i < 50000)
+echo "$i `./insercion $i`" >> datos/salidaInsercion.dat
+@ i += 1000
+end
+
+echo "Datos Seleccion"
+@ i = 0
+while ( $i < 50000)
+echo "$i `./seleccion $i`" >> datos/salidaSeleccion.dat
+@ i += 1000
+end
+
+echo "Datos MergeSort"
+@ i = 0
+while ( $i < 12000000)
+echo "$i `./mergesort $i`" >> datos/salidaMergeSort.dat
+@ i += 400000
+end
+
+echo "Datos QuickSort"
+@ i = 0
+while ( $i < 12000000)
+echo "$i `./quicksort $i`" >> datos/salidaQuickSort.dat
+@ i += 400000
+end
+
+echo "Datos HeapSort"
+@ i = 0
+while ( $i < 12000000)
+echo "$i `./heapsort $i`" >> datos/salidaHeapSort.dat
+@ i += 400000
+end
+
+echo "Datos Floyd"
+@ i = 0
+while ( $i < 800)
+echo "$i `./floyd $i`" >> datos/salidaFloyd.dat
+@ i += 32
+end
+
+echo "Datos Fibonacci"
+@ i = 0
+while ( $i < 50)
+echo "$i `./fibonacci $i`" >> datos/salidaFibonacci.dat
+@ i += 1
+end
